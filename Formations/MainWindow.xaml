@@ -17,7 +17,10 @@
             
         </Style>
     </Window.Resources>
-    <Grid>
-        
-    </Grid>
+
+    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+    </ScrollViewer>
+
 </Window>
