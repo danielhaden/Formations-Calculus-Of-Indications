@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Formations.Engine
+namespace Formations.WPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,7 +23,6 @@ namespace Formations.Engine
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new MainWindowViewModel(this);
         }
     }
 }
