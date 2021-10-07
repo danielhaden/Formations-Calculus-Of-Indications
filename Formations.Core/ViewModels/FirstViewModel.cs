@@ -11,5 +11,12 @@ namespace Formations.Core.ViewModels
             get { return hello; }
             set { SetProperty(ref hello, value); }
         }
+
+        public short GridViewWidth { get; set; } = 300;
+
+        public short GridViewHeight { get; set; } = 300;
+
+
+
     }
 }

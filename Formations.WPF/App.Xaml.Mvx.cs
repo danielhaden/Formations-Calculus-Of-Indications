@@ -10,7 +10,10 @@ namespace Formations.WPF
     {
         private bool _setupComplete;
 
-        private void DoSetup()
+        /// <summary>
+        /// Performs required setup on startup
+        /// </summary>
+        private void Setup()
         {
             LoadMvxAssemblyResources();
 
@@ -29,7 +32,7 @@ namespace Formations.WPF
         {
             if (!_setupComplete)
             {
-                DoSetup();
+                Setup();
             }
 
             base.OnActivated(e);
