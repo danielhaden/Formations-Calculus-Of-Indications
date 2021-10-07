@@ -8,9 +8,80 @@
      mc:Ignorable="d" 
      d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
+
+        <!-- Grid View Elements-->
+        <ScrollViewer HorizontalScrollBarVisibility="Visible">
+            
+            <!-- Outermost Canvas -->
+            <Canvas Width="{Binding GridViewWidth}" 
+                    Height="{Binding GridViewHeight}">
+                
+                <!-- Canvas for Minor Gridlines -->
+                <Canvas  Width="{Binding GridViewWidth}" 
+                         Height="{Binding GridViewHeight}">
+                    <Canvas.Background>
+                        
+                        <!-- Drawing Brush to tile the canvas -->
+                        <DrawingBrush Stretch="None" 
+                                      TileMode="Tile"
+                                      Viewport="0,0 10,10" 
+                                      ViewportUnits="Absolute">
+                            
+                            <DrawingBrush.Drawing>
+                                <GeometryDrawing>
+                                    <GeometryDrawing.Geometry>
+                                        <GeometryGroup>
+                                            <LineGeometry StartPoint="0,0" 
+                                                          EndPoint="0,10"/>
+                                            <LineGeometry StartPoint="0,0" 
+                                                          EndPoint="10,0"/>
+                                        </GeometryGroup>
+                                    </GeometryDrawing.Geometry>
+                                    <GeometryDrawing.Pen>
+                                        <Pen Thickness="1" 
+                                             Brush="DarkGray"/>
+                                    </GeometryDrawing.Pen>
+                                </GeometryDrawing>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Canvas.Background>
+                </Canvas>
+                <Canvas  Width="{Binding GridViewWidth}" 
+                         Height="{Binding GridViewHeight}"
+                         Visibility="{Binding AreMajorGridlinesDistinguished, 
+                                              Converter={StaticResource BoolToVisibilityConverter},
+                                              UpdateSourceTrigger=PropertyChanged}">
+                    <Canvas.Background>
+                        <DrawingBrush Stretch="None" 
+                                      TileMode="Tile"
+                                      Viewport="0,0 50,50" 
+                                      ViewportUnits="Absolute">
+                            <DrawingBrush.Drawing>
+                                <GeometryDrawing>
+                                    <GeometryDrawing.Geometry>
+                                        <GeometryGroup>
+                                            <LineGeometry StartPoint="0,0" EndPoint="0,50"/>
+                                            <LineGeometry StartPoint="0,0" EndPoint="50,0"/>
+                                        </GeometryGroup>
+                                    </GeometryDrawing.Geometry>
+                                    <GeometryDrawing.Pen>
+                                        <Pen Thickness="3" 
+                                             Brush="DarkGray"
+                                             />
+                                    </GeometryDrawing.Pen>
+                                </GeometryDrawing>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Canvas.Background>
+                </Canvas>
+            </Canvas>
+        </ScrollViewer>
+
         <StackPanel>
-            <Label Content="{Binding Hello, Mode=OneWay}" />
-            <TextBox Text="{Binding Hello, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <CheckBox Content="Distinguish major/minor gridlines" 
+                      IsChecked="{Binding AreMajorGridlinesDistinguished}"/>
+
         </StackPanel>
+
     </Grid>
 </views:MvxWpfView>

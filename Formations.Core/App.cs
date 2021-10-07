@@ -11,6 +11,7 @@ namespace Formations.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
+            // Set the starting page
             RegisterNavigationServiceAppStart<ViewModels.FirstViewModel>();
         }
     }
