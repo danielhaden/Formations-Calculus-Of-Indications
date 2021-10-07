@@ -12,10 +12,21 @@ namespace Formations.Core.ViewModels
             set { SetProperty(ref hello, value); }
         }
 
-        public short GridViewWidth { get; set; } = 300;
+        public short GridViewWidth { get; set; } = 900;
 
-        public short GridViewHeight { get; set; } = 300;
+        public short GridViewHeight { get; set; } = 900;
 
+        public short ZoomLevel { get; set; } = 10;
+
+
+        bool _AreMajorGridlinesDistinguished = true;
+        /// <summary>
+        /// Indicates whether major/minor gridlines should be distinguished or uniform
+        /// </summary>
+        public bool AreMajorGridlinesDistinguished {
+            get { return _AreMajorGridlinesDistinguished; }
+            set { SetProperty(ref _AreMajorGridlinesDistinguished, value); }  
+        }
 
 
     }

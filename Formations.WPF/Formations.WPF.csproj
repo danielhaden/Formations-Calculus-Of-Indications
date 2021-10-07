@@ -67,6 +67,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="App.Xaml.Mvx.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\FirstView.xaml.cs">
